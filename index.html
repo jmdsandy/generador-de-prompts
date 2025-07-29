@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-magic"></i> AI Prompt Generator</h1>
+            <p class="subtitle">Create powerful prompts for AI assistants, ChatGPT, and more</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Prompt Categories -->
+            <section class="categories-section">
+                <h2>Prompt Categories</h2>
+                <div class="categories-grid">
+                    <button class="category-btn active" data-category="writing">
+                        <i class="fas fa-pen"></i>
+                        <span>Writing</span>
+                    </button>
+                    <button class="category-btn" data-category="business">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Business</span>
+                    </button>
+                    <button class="category-btn" data-category="creative">
+                        <i class="fas fa-palette"></i>
+                        <span>Creative</span>
+                    </button>
+                    <button class="category-btn" data-category="educational">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Educational</span>
+                    </button>
+                    <button class="category-btn" data-category="coding">
+                        <i class="fas fa-code"></i>
+                        <span>Coding</span>
+                    </button>
+                    <button class="category-btn" data-category="analysis">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analysis</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Prompt Templates -->
+            <section class="templates-section">
+                <h2>Prompt Templates</h2>
+                <div class="templates-grid" id="templatesGrid">
+                    <!-- Templates will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Custom Prompt Builder -->
+            <section class="builder-section">
+                <h2>Custom Prompt Builder</h2>
+                <div class="builder-grid">
+                    <div class="builder-controls">
+                        <div class="control-group">
+                            <label for="roleSelect">Role/Persona:</label>
+                            <select id="roleSelect">
+                                <option value="">Select a role...</option>
+                                <option value="expert">Expert in the field</option>
+                                <option value="teacher">Experienced teacher</option>
+                                <option value="consultant">Professional consultant</option>
+                                <option value="analyst">Data analyst</option>
+                                <option value="writer">Creative writer</option>
+                                <option value="developer">Software developer</option>
+                                <option value="researcher">Academic researcher</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="taskInput">Task/Goal:</label>
+                            <input type="text" id="taskInput" placeholder="What do you want the AI to do?">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="contextInput">Context/Background:</label>
+                            <textarea id="contextInput" placeholder="Provide relevant context or background information"></textarea>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="formatSelect">Output Format:</label>
+                            <select id="formatSelect">
+                                <option value="">Any format</option>
+                                <option value="list">Bulleted list</option>
+                                <option value="paragraph">Detailed paragraph</option>
+                                <option value="steps">Step-by-step guide</option>
+                                <option value="table">Table format</option>
+                                <option value="code">Code example</option>
+                                <option value="summary">Brief summary</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="toneSelect">Tone/Style:</label>
+                            <select id="toneSelect">
+                                <option value="">Default tone</option>
+                                <option value="professional">Professional</option>
+                                <option value="casual">Casual</option>
+                                <option value="academic">Academic</option>
+                                <option value="creative">Creative</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="formal">Formal</option>
+                            </select>
+                        </div>
+
+                        <button class="generate-btn" id="generateBtn">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            Generate Prompt
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Generated Prompt Display -->
+            <section class="output-section">
+                <h2>Generated Prompt</h2>
+                <div class="prompt-output">
+                    <div class="output-header">
+                        <span class="output-label">Your AI Prompt:</span>
+                        <div class="output-actions">
+                            <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+                                <i class="fas fa-copy"></i>
+                                Copy
+                            </button>
+                            <button class="save-btn" id="saveBtn" title="Save prompt">
+                                <i class="fas fa-save"></i>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                    <div class="prompt-text" id="promptOutput">
+                        <p class="placeholder">Your generated prompt will appear here...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Saved Prompts -->
+            <section class="saved-section">
+                <h2>Saved Prompts</h2>
+                <div class="saved-prompts" id="savedPrompts">
+                    <p class="no-saves">No saved prompts yet. Generate and save some prompts to see them here!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Prompt Generator. Enhance your AI interactions with better prompts.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
